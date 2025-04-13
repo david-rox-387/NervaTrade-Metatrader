@@ -1,0 +1,393 @@
+# NervaTradeAI - MetaTrader 5 Expert Advisor
+
+NervaTradeAI combines computer vision and machine learning trained on Google TPUs to analyze markets and execute trades. It features advanced money management to maximize profits while minimizing risk exposure.
+
+## Getting Started with NervaTrade
+
+Before installing the Expert Advisor, you need to set up your NervaTrade account and API keys:
+
+1. **Create your NervaTrade account**
+   - Visit [https://app.nervatrade.com](https://app.nervatrade.com)
+   - Sign up for an account
+
+2. **Set up your Google Gemini API key**
+   - Go to Google AI Studio
+   - Create a Gemini API key
+   - Copy your API key
+
+3. **Configure your NervaTrade prompt model**
+   - Return to [https://app.nervatrade.com](https://app.nervatrade.com)
+   - Navigate to the Prompt Models section
+   - Create a new prompt model
+   - Paste your Gemini API key
+   - Configure your model settings
+
+4. **Generate your NervaTrade API key**
+   - From your dashboard, create a new NervaTrade API key
+   - Save this API key - you'll need it to configure the Expert Advisor
+
+## The Rise of AI Vibe Trading
+
+Trading has evolved beyond traditional technical analysis into a new paradigm: AI-driven vibe trading. This innovative approach leverages the power of artificial intelligence to capture market sentiment and identify opportunities that conventional strategies might miss.
+
+### What is Vibe Trading?
+
+Vibe trading represents the next evolution in financial market analysis - using advanced AI to detect subtle patterns and "vibes" in market movements that are invisible to human traders. By processing vast amounts of data across multiple timeframes, NervaTrade's algorithms can sense shifts in market psychology before they manifest in price.
+
+### NervaTrade's AI Advantage
+
+NervaTrade sits at the intersection of cutting-edge technology and financial markets:
+
+- **Advanced Pattern Recognition**: Our neural networks identify complex correlations that traditional indicators cannot detect
+- **Multi-Dimensional Analysis**: Simultaneous evaluation of multiple timeframes provides deeper market context
+- **Adaptive Learning**: The system continuously improves by analyzing its own performance
+- **Sentiment Integration**: Market sentiment is factored into every trading decision
+
+By deploying these AI capabilities through MetaTrader 5, we've democratized access to institutional-grade trading technology, allowing retail traders to compete on a level playing field with professionals.
+
+## Installation Guide
+
+### Prerequisites
+- MetaTrader 5 platform installed on your computer
+- A trading account with a broker that supports MetaTrader 5
+- Internet connection for API communication
+
+### Installation Steps
+
+1. **Download the Expert Advisor Files**
+   - Download both `NervaTradeAI.ex5` and `NervaTradeAI_TESTER.ex5` from this repository
+
+2. **Install the Expert Advisor in MetaTrader 5**
+   - Open your MetaTrader 5 platform
+   - Go to `File` > `Open Data Folder` to open your MetaTrader 5 data directory
+   - Navigate to `MQL5\Experts` folder
+   - Copy the downloaded `.ex5` files into this folder
+   - Restart MetaTrader 5 to ensure the files are recognized
+
+3. **Attach the EA to a Chart**
+   - Open a chart for the currency pair you wish to trade
+   - In the Navigator panel (Press Ctrl+N if not visible), expand the "Expert Advisors" section
+   - Find "NervaTradeAI" in the list, and drag it onto your chart
+   - A configuration window will appear
+
+## Configuration
+
+### Enabling Automated Trading
+
+Before using the EA, you need to enable automated trading in MetaTrader 5:
+
+1. Click the "AutoTrading" button in the top toolbar (or press Alt+T)
+2. Go to `Tools` > `Options` > `Expert Advisors`
+3. Make sure the following options are enabled:
+   - Allow automated trading
+   - Allow WebRequest for listed URL
+   
+4. In the "WebRequest" field, add:
+   ```
+   https://api.nervatrade.com
+   ```
+   
+5. Click "OK" to save the settings
+
+### EA Parameters
+
+Configure the following main parameters:
+
+#### API Settings
+- **API Key**: Your NervaTrade API key
+- **Prompt Model ID**: Your model ID
+- **API Check Timeframe**: Timeframe for API checks
+
+#### Risk Management
+- **Maximum Floating Drawdown**: Maximum allowed drawdown percentage
+- **Maximum Open Positions**: Limit of concurrent open positions
+
+#### Position Sizing
+- **Percentage of Equity per Trade**: Risk per trade (%)
+- **Commission per Lot**: Your broker's commission
+
+#### Exit Strategies
+- Configure take profit, trailing stop, and other exit parameters according to your strategy
+
+### Telegram Notifications (PRO and PREMIUM Users Only)
+
+To receive trade notifications via Telegram:
+
+1. Enable the Telegram API endpoint in MetaTrader 5:
+   - Go to `Tools` > `Options` > `Expert Advisors`
+   - Add the following URL to the "WebRequest" field:
+   ```
+   https://api.telegram.org
+   ```
+
+2. Create a Telegram Bot:
+   - Open Telegram and search for "BotFather"
+   - Start a chat with BotFather and send `/newbot`
+   - Follow the instructions to name your bot
+   - Once created, you'll receive a Bot Token (looks like `123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ`)
+   - Save this token
+
+3. Get your Chat ID:
+   - For personal notifications:
+     - Search for "userinfobot" in Telegram
+     - Start a chat and it will reply with your Chat ID
+   - For group notifications:
+     - Add your bot to a group
+     - Send a message in the group mentioning the bot
+     - Visit: `https://api.telegram.org/bot<YourBOTToken>/getUpdates`
+     - Find the "chat" object that contains your "id" (will be negative for groups)
+
+4. Configure Telegram Parameters in the EA:
+   - **Telegram Bot Token**: Enter your bot token
+   - **Telegram Chat ID**: Enter your chat or group ID
+   - Enable desired alerts:
+     - Position count alerts
+     - Position open/close alerts
+     - Drawdown alerts
+
+## Regular vs. Tester Version
+
+This repository includes two versions of the Expert Advisor:
+
+### NervaTradeAI.ex5
+- The standard version for live trading on real or demo accounts
+- Uses a specific UI library for its interface
+- Cannot be used in the MetaTrader 5 Strategy Tester due to interface library incompatibility
+
+### NervaTradeAI_TESTER.ex5
+- Specifically designed for backtesting in MetaTrader 5 Strategy Tester
+- Includes manual trading buttons in the interface to open positions during testing
+- Uses a different UI library compatible with the Strategy Tester
+- Functionally identical to the standard version in terms of trading logic and strategy
+
+**Note:** Both versions offer the same trading functionality and strategy implementation. The only difference is in the interface library used, which affects their compatibility with the Strategy Tester.
+
+## System Architecture
+
+NervaTradeAI is built on a sophisticated event-driven architecture that integrates multiple components to create a robust trading system. The diagram below illustrates the high-level structure and relationships between the key components:
+
+```plantuml
+@startuml NervaTradeAI Architecture
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam arrowColor #333333
+skinparam classFontSize 14
+skinparam packageFontSize 14
+skinparam classFontStyle bold
+skinparam packageFontStyle bold
+skinparam backgroundColor #FFFFFF
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+
+package "Core System" {
+  class CNervaEA {
+    + OnInit()
+    + OnTick()
+    + OnDeinit()
+    + OnTradeTransaction()
+    + OnChartEvent()
+  }
+  
+  interface IEventListener {
+    + OnEvent(CEvent)
+  }
+  
+  class CEvent {
+    - m_type: ENUM_EVENT_TYPE
+    - m_timestamp: datetime
+    - m_description: string
+    - m_priority: int
+  }
+  
+  class CEventDispatcher {
+    + Subscribe()
+    + Unsubscribe()
+    + DispatchEvent()
+  }
+}
+
+package "API Integration" {
+  class CApiSignalGenerator
+  class CApiClient
+  class CSignalParser
+  class CNeuralPatternRecognizer
+}
+
+package "Entry Strategies" {
+  class CBaseStrategy
+  class CApiStrategy
+  class CManualStrategy
+  class CMarketAnalyzer
+}
+
+package "Exit Strategies" {
+  class CTrailingStop
+  class CPositionMonitor
+}
+
+package "Risk Management" {
+  class CRiskManager
+  class CSpreadMonitor
+  class CPositionSizeManager
+  class CDrawdownManager
+}
+
+package "Trading Utilities" {
+  class CEnhancedSymbolInfo
+  class COrderUtils
+  class CExpertTrade
+  class CTradeTransaction
+  class CBarDetector
+  class CVolatilityAnalyzer
+}
+
+package "Notification System" {
+  class CTelegramManager
+  class CAlertManager
+}
+
+package "User Interface" {
+  class CNervaGUI
+  class CMarketVisualizer
+  class CTradingDashboard
+}
+
+' Core relationships between principal components
+CNervaEA *--> CApiSignalGenerator : creates >
+CNervaEA *--> CApiStrategy : creates >
+CNervaEA *--> CTrailingStop : uses >
+CNervaEA *--> CPositionMonitor : uses >
+CNervaEA *--> CRiskManager : uses >
+CNervaEA *--> CBarDetector : uses >
+
+' Conditional relationships based on build type
+CNervaEA *--> CNervaGUI : creates (live version) >
+CNervaEA *--> CManualStrategy : creates (tester version) >
+
+' API component relationships
+CApiSignalGenerator --> CApiClient : uses >
+CApiSignalGenerator --> CSignalParser : uses >
+CApiSignalGenerator --> CNeuralPatternRecognizer : uses >
+CApiSignalGenerator ..|> IEventListener
+CApiSignalGenerator ..> CEvent : creates >
+
+' Strategy inheritance and relationships
+CApiStrategy --|> CBaseStrategy : extends >
+CManualStrategy --|> CBaseStrategy : extends >
+CApiStrategy ..|> IEventListener
+CBaseStrategy --> COrderUtils : uses >
+CBaseStrategy --> CRiskManager : uses >
+CBaseStrategy --> CMarketAnalyzer : uses >
+
+' Exit strategy relationships
+CTrailingStop ..|> IEventListener
+CTrailingStop --> COrderUtils : uses >
+CTrailingStop --> CExpertTrade : uses >
+CPositionMonitor ..|> IEventListener
+CPositionMonitor --> COrderUtils : uses >
+CPositionMonitor --> CExpertTrade : uses >
+
+' Risk management relationships
+CRiskManager --> CEnhancedSymbolInfo : uses >
+CRiskManager --> CSpreadMonitor : uses >
+CRiskManager --> CPositionSizeManager : uses >
+CRiskManager --> CDrawdownManager : uses >
+
+' Trading utilities relationships
+COrderUtils --> CEnhancedSymbolInfo : uses >
+COrderUtils --> CVolatilityAnalyzer : uses >
+CExpertTrade --> CTradeTransaction : uses >
+CExpertTrade --> CEnhancedSymbolInfo : uses >
+
+' UI and notification relationships
+CNervaGUI ..|> IEventListener
+CMarketVisualizer ..|> IEventListener
+CTelegramManager ..|> IEventListener
+CAlertManager ..|> IEventListener
+
+' Event system relationships
+CEventDispatcher o-> IEventListener : notifies >
+CEventDispatcher o-> CEvent : dispatches >
+
+' Singleton relationships
+CRiskManager <-- "<<singleton>>"
+CTrailingStop <-- "<<singleton>>"
+CPositionMonitor <-- "<<singleton>>"
+CEnhancedSymbolInfo <-- "<<singleton>>"
+COrderUtils <-- "<<singleton>>"
+CExpertTrade <-- "<<singleton>>"
+CTradeTransaction <-- "<<singleton>>"
+CSpreadMonitor <-- "<<singleton>>"
+CTelegramManager <-- "<<singleton>>"
+CEventDispatcher <-- "<<singleton>>"
+CNeuralPatternRecognizer <-- "<<singleton>>"
+
+note bottom of CNervaEA
+  Main controller class that
+  orchestrates all components
+end note
+
+note bottom of CPositionMonitor
+  Implements advanced multi-phase
+  position management with adaptive sizing
+end note
+
+note bottom of CEventDispatcher
+  Central event hub enabling
+  loose coupling between components
+end note
+
+note right of CNeuralPatternRecognizer
+  Deep learning model that identifies
+  repeated market patterns
+end note
+
+note right of CVolatilityAnalyzer
+  Analyzes real-time volatility across 
+  multiple timeframes
+end note
+
+footer © 2025 StormWave Technologies
+
+@enduml
+```
+
+The NervaTradeAI system utilizes an event-driven architecture where components communicate through a central event dispatching system. This design provides several advantages:
+
+1. **Loose Coupling**: Components interact through events rather than direct calls, making the system more modular and maintainable.
+
+2. **Extensibility**: New components can be added by implementing the IEventListener interface and subscribing to relevant events.
+
+3. **Separation of Concerns**: 
+   - **Entry Strategies**: Handle trade entry signals from API or manual inputs
+   - **Exit Strategies**: Manage position exits through trailing stops and adaptive position adjustment
+   - **Risk Management**: Control position sizing, spread monitoring, and drawdown protection
+   - **API Integration**: Connect to external trading signal providers with neural pattern recognition
+   - **Trading Utilities**: Provide market data and order execution functionality with volatility analysis
+   - **Notification System**: Send alerts and manage communications
+
+4. **Advanced Analysis Components**:
+   - **Neural Pattern Recognition**: Identifies recurring market patterns using machine learning
+   - **Market Sentiment Analysis**: Evaluates market emotions and sentiment indicators
+   - **Volatility Analysis**: Calculates and normalizes volatility across timeframes
+   - **Position Size Management**: Optimizes trade size based on risk parameters
+
+5. **Singleton Pattern**: Key components are implemented as singletons to ensure a single point of responsibility and state management across the system.
+
+6. **Dual Interface Mode**: 
+   - Regular version with full GUI for live trading
+   - Tester version with manual controls for backtesting
+
+This architecture allows the system to handle complex trading scenarios while maintaining code organization and enabling future enhancements.
+
+## Support
+
+For questions or support, please contact:
+- Website: [https://nervatrade.com](https://nervatrade.com)
+- Email: support@nervatrade.com
+
+---
+
+© 2025 StormWave Technologies 
