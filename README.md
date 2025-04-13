@@ -28,7 +28,7 @@ Before installing the Expert Advisor, you need to set up your NervaTrade account
 
 ## The Rise of AI Vibe Trading
 
-Trading strategies are now more accessible than ever with the introduction of prompt-based "vibe trading." This approach bridges the gap between having a trading strategy and implementing it, without requiring programming skills.
+Trading strategies are now more accessible than ever with the introduction of prompt-based "Vibe Trading." This approach bridges the gap between having a trading strategy and implementing it, without requiring programming skills.
 
 ### What is Vibe Trading?
 
