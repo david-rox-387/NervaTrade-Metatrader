@@ -28,11 +28,11 @@ Before installing the Expert Advisor, you need to set up your NervaTrade account
 
 ## The Rise of AI Vibe Trading
 
-Trading has evolved beyond traditional technical analysis into a new paradigm: AI-driven vibe trading. This innovative approach leverages the power of artificial intelligence to capture market sentiment and identify opportunities that conventional strategies might miss.
+Trading strategies are now more accessible than ever with the introduction of prompt-based "vibe trading." This approach bridges the gap between having a trading strategy and implementing it, without requiring programming skills.
 
 ### What is Vibe Trading?
 
-Vibe trading represents the next evolution in financial market analysis - using advanced AI to detect subtle patterns and "vibes" in market movements that are invisible to human traders. By processing vast amounts of data across multiple timeframes, NervaTrade's algorithms can sense shifts in market psychology before they manifest in price.
+Vibe trading is about turning your trading knowledge into automated strategies without code. If you have a solid trading approach but lack programming skills, NervaTrade allows you to express your strategy through natural language prompts that the system translates into executable trading algorithms.
 
 ### How Vibe Trading Works
 
