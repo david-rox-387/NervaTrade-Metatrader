@@ -214,7 +214,6 @@ This architecture allows the system to handle complex trading scenarios while ma
 
 For questions or support, please contact:
 - Website: [https://nervatrade.com](https://nervatrade.com)
-- Email: support@nervatrade.com
 
 ---
 
