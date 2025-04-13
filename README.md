@@ -34,6 +34,20 @@ Trading has evolved beyond traditional technical analysis into a new paradigm: A
 
 Vibe trading represents the next evolution in financial market analysis - using advanced AI to detect subtle patterns and "vibes" in market movements that are invisible to human traders. By processing vast amounts of data across multiple timeframes, NervaTrade's algorithms can sense shifts in market psychology before they manifest in price.
 
+### How Vibe Trading Works
+
+1. **Express Your Strategy**
+   - Describe your trading approach in natural language, just as you would explain it to another trader
+   - No coding knowledge required - simply write what you want in plain English
+
+2. **AI Translation**
+   - N.E.R.V.A. translates your prompts into sophisticated, executable trading algorithms
+   - Complex strategies are implemented without writing a single line of code
+
+3. **Automated Execution**
+   - Your strategy runs automatically, removing human bias and emotion from decision-making
+   - The system adapts to changing market conditions based on your defined parameters
+
 ### NervaTrade's AI Advantage
 
 NervaTrade sits at the intersection of cutting-edge technology and financial markets:
