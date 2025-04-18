@@ -285,13 +285,9 @@ The NervaTrade Manager provides a comprehensive interface for monitoring and man
 
 ![Trade Manager Interface](docs/trade_manager.png)
 
-<div align="center">
-  <a href="https://nervatrade.com/images/video_manager.mp4">
-    <img src="docs/trade_manager.png" alt="NervaTrade Manager Video" width="600" style="border: 2px solid #0366d6; border-radius: 8px;">
-    <br>
-    <img src="https://img.shields.io/badge/▶️-Watch_Demo_Video-red?style=for-the-badge" alt="Watch Demo">
-  </a>
-</div>
+
+https://github.com/user-attachments/assets/d32c768d-aea7-4d2d-af53-8edbf9997f68
+
 
 ### Key Features
 
