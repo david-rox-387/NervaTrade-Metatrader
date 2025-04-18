@@ -2,6 +2,10 @@
 
 NervaTradeAI combines computer vision and machine learning trained on Google TPUs to analyze markets and execute trades. It features advanced money management to maximize profits while minimizing risk exposure.
 
+![NervaTradeAI Interface](docs/nervatrade_panel.png)
+
+[🎬 Watch NervaTradeAI in Action 📈](docs/nervatrade_video.mp4)
+
 ## Getting Started with NervaTrade
 
 Before installing the Expert Advisor, you need to set up your NervaTrade account and API keys:
@@ -87,6 +91,55 @@ By deploying these AI capabilities through MetaTrader 5, we've democratized acce
    - In the Navigator panel (Press Ctrl+N if not visible), expand the "Expert Advisors" section
    - Find "NervaTradeAI" in the list, and drag it onto your chart
    - A configuration window will appear
+
+## Setting Up and Testing the Software
+
+### Complete Installation
+
+1. **Example Indicators (Optional)**
+   - The system is fully customizable and compatible with your own preferred indicators
+   - For testing purposes, we provide example indicator files that demonstrate a working, high-performance strategy
+   - To use these examples, copy the provided `.ex5` files into your `MQL5\Indicators` folder
+
+2. **Example Chart Templates (Optional)**
+   - You can use your own custom templates with NervaTradeAI
+   - We provide optimized example templates that work well with our trading strategy
+   - To use these examples, copy the provided `.tpl` files into your `MQL5\Profiles\Templates` folder
+   - These templates demonstrate settings for a proven, performant strategy
+
+NervaTradeAI is designed to be flexible and adaptable to your trading style. While we provide example indicators and templates for immediate testing, you're encouraged to customize the system with your preferred tools and settings.
+
+### Creating and Configuring Your Prompt Model
+
+1. **Set Up Your Prompt Model**
+   - Go to [NervaTrade Dashboard](https://app.nervatrade.com/dashboard?tab=prompt-models)
+   - Click on "Create New Prompt Model"
+   - Give your model a name (e.g., "SMC Strategy")
+   
+2. **Select the Appropriate Prompt File**
+   - Choose the prompt file based on your subscription level:
+     - Free users: Use content from `smart_money_concept_EMA_free.txt`
+     - Pro users: Use content from `smart_money_concept_EMA_pro.txt`
+     - Premium users: Use content from `smart_money_concept_EMA_premium.txt`
+   - Copy and paste the entire content into the prompt model field
+   - Save your prompt model
+
+3. **Configure the Expert Advisor**
+   - Copy the Prompt Model ID from your newly created model (displayed in the dashboard)
+   - In MetaTrader 5, right-click on the NervaTradeAI icon on your chart
+   - Select "Properties" and navigate to the "Inputs" tab
+   - Paste the copied ID into the "Prompt Model ID" field
+   - Configure other parameters as needed
+
+### Important Usage Notes
+
+- **One Model Per EA**: Each NervaTradeAI instance can use only one prompt model at a time
+- **Parameter Changes**: When changing parameters, it's recommended to:
+  - Close the Expert Advisor first
+  - Make your changes
+  - Reattach the EA to the chart
+- **State Preservation**: The software maintains the state of positions and calculations even when reattached
+- **Avoid Mid-Operation Changes**: It's advisable to avoid changing parameters while there are operations in progress
 
 ## Configuration
 
@@ -230,7 +283,7 @@ The NervaTrade Manager provides a comprehensive interface for monitoring and man
 
 ![Trade Manager Interface](docs/trade_manager.png)
 
-[Watch the NervaTrade Manager Demo Video](docs/video_manager.mp4)
+[🎥 Watch the NervaTrade Manager Demo Video ▶️](docs/video_manager.mp4)
 
 ### Key Features
 

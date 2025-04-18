@@ -1,0 +1,133 @@
+<strategy>
+
+  <general_instructions>
+    The strategy exploits Smart‑Money‑Concept (SMC) tools - Order Blocks (OB), Liquidity Sweeps,
+    Fair‑Value Gaps (FVG) and volume - to capture institutional footprints on the **M5** execution
+    timeframe. The M15 and H1 timeframes provide directional context.
+
+    Four Exponential Moving Averages (EMAs) are plotted on every timeframe and colour‑coded:
+
+      - EMA‑5   : red  
+      - EMA‑10  : yellow  
+      - EMA‑60  : turquoise  
+      - EMA‑223 : magenta  
+
+    ***Chart‑cleanliness rule***  
+    If, during the last 12 completed M5 candles, price intersects at least **three** of the four EMAs
+    >= 5 times (i.e. the EMAs are tangled with no clear stacking), the chart is deemed *dirty* and the
+    output must be **“NEUTRAL”**.
+
+    On every new M5 candle the AI returns exactly one of: **“LONG”**, **“SHORT”**, or **“NEUTRAL”**
+    and then waits for the next candle.
+  </general_instructions>
+
+  <!-- LONG SET‑UP  >
+  <buy_conditions>
+
+    1. <market_structure>
+         - On **M5** a bullish Break‑of‑Structure (BOS) *or* Change‑of‑Character (CHoCH) has formed.  
+         - **M15** and **H1** bias are bullish or neutral (last swing high has not been violated to
+           the downside).
+       </market_structure>
+
+    2. <ema_alignment>
+         Trend‑following entry: EMA‑5 > EMA‑10 > EMA‑60 > EMA‑223 and price trades above EMA‑10.  
+         Counter‑trend entry: price sweeps below EMA‑223, prints a bullish rejection candle,
+         then closes back above EMA‑60; EMA‑223 is treated as key support.
+       </ema_alignment>
+
+    3. <order_block>
+         Price pulls back into a bullish OB (demand) that created the recent BOS/CHoCH and shows
+         rejection with above‑average volume.
+       </order_block>
+
+    4. <liquidity_sweep>
+         A stop‑run below a recent M5 low is followed by an engulfing or pin‑bar reversal that
+         closes above that low.
+       </liquidity_sweep>
+
+    5. <fair_value_gap>
+         A bullish FVG lies between the sweep candle and the OB and has not yet been fully filled.
+       </fair_value_gap>
+
+    6. <volume_confirmation>
+         At either the OB touch or the sweep candle there is a clearly identifiable volume spike
+         versus the last 20 M5 bars.
+       </volume_confirmation>
+
+  </buy_conditions>
+
+  <!-- SHORT SET‑UP >
+  <sell_conditions>
+
+    1. <market_structure>
+         - On **M5** a bearish BOS or CHoCH has formed.  
+         - **M15** and **H1** bias are bearish or neutral (last swing low has not been violated
+           to the upside).
+       </market_structure>
+
+    2. <ema_alignment>
+         Trend‑following entry: EMA‑5 < EMA‑10 < EMA‑60 < EMA‑223 and price trades below EMA‑10.  
+         Counter‑trend entry: price sweeps above EMA‑223, prints a bearish rejection candle,
+         then closes back below EMA‑60; EMA‑223 is treated as key resistance.
+       </ema_alignment>
+
+    3. <order_block>
+         Price pulls back into a bearish OB (supply) that created the recent BOS/CHoCH and shows
+         rejection with above‑average volume.
+       </order_block>
+
+    4. <liquidity_sweep>
+         A stop‑run above a recent M5 high is followed by an engulfing or pin‑bar reversal that
+         closes below that high.
+       </liquidity_sweep>
+
+    5. <fair_value_gap>
+         A bearish FVG lies between the sweep candle and the OB and has not yet been fully filled.
+       </fair_value_gap>
+
+    6. <volume_confirmation>
+         At either the OB touch or the sweep candle there is a clearly identifiable volume spike
+         versus the last 20 M5 bars.
+       </volume_confirmation>
+
+  </sell_conditions>
+
+  <!-- STAY NEUTRAL >
+  <neutral_conditions>
+    The output must be **“NEUTRAL”** when *any* of the following is true:
+
+    1. <dirty_chart>
+         Chart‑cleanliness rule (see General Instructions) is violated.
+       </dirty_chart>
+
+    2. <range_or_low_volume>
+         M5 shows no valid BOS/CHoCH and 20‑bar ATR is below its 50‑bar SMA (low volatility).
+       </range_or_low_volume>
+
+    3. <timeframe_misalignment>
+         M5 setup conflicts with M15 or H1 directional bias.
+       </timeframe_misalignment>
+
+    4. <missing_confluence>
+         No valid OB, FVG, or liquidity sweep is present near current price.
+       </missing_confluence>
+  </neutral_conditions>
+
+  <!-- DATA FEEDS >
+  <data_sources>
+
+    <!-- Execution and pattern recognition >
+    @{@SYMBOL,OHLC[M5,500]}
+    @{@SYMBOL,OHLC[M15,300]}
+
+
+    <!-- Context >
+    @{@SYMBOL,OHLC[H1,200]}
+
+    <!-- Screenshots with the new template >
+    @SCREENSHOT[@SYMBOL,M5,TEMPLATE(SMC_4_1.tpl)]
+
+  </data_sources>
+
+</strategy>
