@@ -4,7 +4,13 @@ NervaTradeAI combines computer vision and machine learning trained on Google TPU
 
 ![NervaTradeAI Interface](docs/nervatrade_panel.png)
 
-[🎬 Watch NervaTradeAI in Action 📈](https://nervatrade.com/images/nervatrade_video.mp4)
+<div align="center">
+  <a href="https://nervatrade.com/images/nervatrade_video.mp4">
+    <img src="docs/nervatrade_panel.png" alt="NervaTradeAI Video" width="600" style="border: 2px solid #0366d6; border-radius: 8px;">
+    <br>
+    <img src="https://img.shields.io/badge/▶️-Watch_Video-red?style=for-the-badge" alt="Watch Video">
+  </a>
+</div>
 
 ## Getting Started with NervaTrade
 
@@ -283,7 +289,13 @@ The NervaTrade Manager provides a comprehensive interface for monitoring and man
 
 ![Trade Manager Interface](docs/trade_manager.png)
 
-[🎥 Watch the NervaTrade Manager Demo Video ▶️](https://nervatrade.com/images/video_manager.mp4)
+<div align="center">
+  <a href="https://nervatrade.com/images/video_manager.mp4">
+    <img src="docs/trade_manager.png" alt="NervaTrade Manager Video" width="600" style="border: 2px solid #0366d6; border-radius: 8px;">
+    <br>
+    <img src="https://img.shields.io/badge/▶️-Watch_Demo_Video-red?style=for-the-badge" alt="Watch Demo">
+  </a>
+</div>
 
 ### Key Features
 
