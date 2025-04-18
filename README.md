@@ -4,13 +4,9 @@ NervaTradeAI combines computer vision and machine learning trained on Google TPU
 
 ![NervaTradeAI Interface](docs/nervatrade_panel.png)
 
-<div align="center">
-  <a href="https://nervatrade.com/images/nervatrade_video.mp4">
-    <img src="docs/nervatrade_panel.png" alt="NervaTradeAI Video" width="600" style="border: 2px solid #0366d6; border-radius: 8px;">
-    <br>
-    <img src="https://img.shields.io/badge/▶️-Watch_Video-red?style=for-the-badge" alt="Watch Video">
-  </a>
-</div>
+
+https://github.com/user-attachments/assets/3386b7f3-c123-4a51-887e-4797fd676734
+
 
 ## Getting Started with NervaTrade
 
