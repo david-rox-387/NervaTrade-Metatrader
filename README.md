@@ -226,10 +226,9 @@ NervaTradeAI includes a powerful position management interface specifically desi
 
 The NervaTrade Manager provides a comprehensive interface for monitoring and managing your trading positions in real-time. This custom-designed tool was developed based on direct client feedback to address the specific needs of professional traders.
 
-<video width="100%" controls>
-  <source src="docs/video_manager.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[Watch the NervaTrade Manager Demo Video](docs/video_manager.mp4)
+
+![NervaTrade Manager Screenshot](docs/diagram.png)
 
 ### Key Features
 
