@@ -218,6 +218,32 @@ This repository includes two versions of the Expert Advisor:
 
 **Note:** Both versions offer the same trading functionality and strategy implementation. The only difference is in the interface library used, which affects their compatibility with the Strategy Tester.
 
+## Position Management Interface
+
+NervaTradeAI includes a powerful position management interface specifically designed to meet client needs for effective trade monitoring and management.
+
+### NervaTrade Manager
+
+The NervaTrade Manager provides a comprehensive interface for monitoring and managing your trading positions in real-time. This custom-designed tool was developed based on direct client feedback to address the specific needs of professional traders.
+
+<video width="100%" controls>
+  <source src="docs/video_manager.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+### Key Features
+
+- **Real-time Position Monitoring**: Track all open positions with detailed statistics
+- **Custom Partial Closures**: Close positions partially using two flexible methods:
+  - **Position Compensation**: Balance between different positions to optimize overall exposure
+  - **Monetary Amount Specification**: Close exact monetary amounts from positions (e.g., close exactly $500 worth of a position)
+- **Timeframe Switching**: Switch between different timeframes for comprehensive multi-timeframe analysis
+- **Deposit Load Indicator**: Visualize the weight and impact of current positions on your deposit
+- **Position Management**: Open compensation positions with specific magic numbers for better trade organization
+- **Risk Metrics Dashboard**: Real-time calculation of key risk metrics
+
+This interface is continuously improved based on user feedback to ensure it meets the evolving needs of traders at all levels of experience.
+
 ## System Architecture
 
 NervaTradeAI is built on a sophisticated event-driven architecture that integrates multiple components to create a robust trading system. The system implements several design patterns to ensure maintainability, extensibility, and reliability. The diagram below illustrates the high-level structure and relationships between the key components:
