@@ -216,6 +216,17 @@ Saturday: "00:00-00:00" (no trading on Saturday)
 
 - Configure take profit, trailing stop, and other exit parameters according to your strategy
 
+#### Black Swan Protection
+
+- **Black Swan Protection** (InpBlackSwanProtection): Enables time-based safeguard against extreme market volatility
+- **Protection Hours** (InpProtectionHours): Number of hours to wait before opening martingale positions after volatility event
+
+A "Black Swan" event in financial markets refers to an unpredictable event that is beyond what is normally expected and has potentially severe consequences. These rare occurrences can cause extreme market volatility where prices move dramatically in one direction in a short time period, often triggered by major news or unexpected economic developments.
+
+When Black Swan Protection is enabled, NervaTradeAI will detect unusual market volatility patterns and temporarily suspend trading for the specified protection hours. This allows markets to stabilize before the system resumes normal operation, particularly before opening any martingale positions that could compound risk during volatile conditions.
+
+This feature provides an additional layer of security for your trading account during periods of extreme market stress, allowing you to employ martingale strategies with reduced risk of consecutive losses during abnormal market conditions.
+
 ### Telegram Notifications (PRO and PREMIUM Users Only)
 
 To receive trade notifications via Telegram:
