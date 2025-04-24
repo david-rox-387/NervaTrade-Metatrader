@@ -180,7 +180,15 @@ Configure the following main parameters:
 #### Position Sizing
 
 - **Percentage of Equity per Trade**: Risk per trade (%)
-- **Commission per Lot**: Your broker's commission
+- **Commission Calculation**: The system supports two commission calculation modes:
+  - **Commission per Lot**: Set a fixed commission amount per lot traded (typical for Forex brokers). Example: if your broker charges $4.5 per lot, enter 4.5 in this field.
+  - **Commission Percentage**: Set a variable commission as a percentage of the traded position (used by some crypto brokers, e.g. Bybit). For example, with Bybit, you can set the Taker Fee Rate as 0.055, which represents a 0.055% commission on the opened position. This is useful for trading cryptocurrencies where commissions are not fixed per lot but are calculated as a percentage of the notional value.
+
+To select the commission mode, configure the appropriate parameters in the EA:
+- **Commission per Lot**: Enter your broker's fixed commission per lot (in account currency)
+- **Commission Percentage**: Enter the commission percentage (e.g., 0.055 for 0.055%)
+
+> **Note:** Use the fixed per lot mode for traditional Forex brokers and the percentage mode for crypto brokers like Bybit. The system will use the selected mode for all commission calculations.
 
 #### Trading Hours
 
